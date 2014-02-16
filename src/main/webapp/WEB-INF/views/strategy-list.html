@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+<head th:fragment="header">
+    <meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="/resources/css/style.css" th:href="@{/resources/css/style.css}"/>
+	<title th:text="#{strategy.list.page.title}">Title</title>
+</head>
+<body>
+<div>
+	<table class="box-table-a">
+		<caption>Site Users</caption>
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Strategy Type</th>
+				<th scope="col">Strategy Name</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Iron Condor</td>
+				<td>High Prob Hedged</td>
+				<td><a href="#">del</a> | <a href="#">edit</a></td>
+			</tr>
+							
+			<tr>
+				<td>2</td>
+				<td>Iron Condor</td>
+				<td>Low Prob</td>
+				<td><a href="#">del</a> | <a href="#">edit</a></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Butterfly</td>
+				<td>M3</td>
+				<td><a href="#">del</a> | <a href="#">edit</a></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Butterfly</td>
+				<td>Bearish</td>
+				<td><a href="#">del</a> | <a href="#">edit</a></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Iron Condor</td>
+				<td>Portillos</td>
+				<td><a href="#">del</a> | <a href="#">edit</a></td>
+			</tr>
+		</tbody>
+	</table>
+ 
+	<form action="#" method="post">
+	<table class="box-table-a">
+		<caption>New Strategy</caption>
+		<thead>
+			<tr>
+				<th>Strategy Type</th>
+				<th>Strategy Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="text" hidden="hidden"/>
+					<input type="text"/></td>
+				<td><input type="text"/></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Action</button></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	</form>
+</div>
+</body>
+</html>
