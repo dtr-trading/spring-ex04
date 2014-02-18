@@ -38,4 +38,8 @@ public class Strategy {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getString() {
+		return String.format("Strategy - Id: [%s]  Type: [%s]  Name: [%s]", this.id, this.type, this.name);
+	}
 }

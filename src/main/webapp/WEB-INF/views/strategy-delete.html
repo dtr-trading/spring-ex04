@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+<head th:fragment="header">
+    <meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="../../resources/css/style.css" th:href="@{/resources/css/style.css}"/>
+	<title th:text="#{strategy.delete.page.title}">Title</title>
+</head>
+
+<body>
+
+<h1 data-th-text="#{strategy.delete.head.title}">temp heading</h1>
+
+	<table class="box-table-a">
+		<tr>
+			<td data-th-text="#{strategy.list.id.label}">Temp id</td>
+			<td data-th-text="${strategyDTO.id}">
+			</td>
+		</tr>
+		<tr>
+			<td data-th-text="#{strategy.list.type.label}">Temp type</td>
+			<td data-th-text="${strategyDTO.type}">
+			</td>
+		</tr>
+		<tr>
+			<td data-th-text="#{strategy.list.name.label}">Temp name</td>
+			<td data-th-text="${strategyDTO.name}">
+			</td>
+		</tr>
+		<tr>
+            <td><a href="#" data-th-href="@{/strategy/delete(id=${strategyDTO.id},phase=confirm)}">
+            	<button type="button" data-th-text="#{delete.button.label}">Delete</button></a>
+            </td>
+            <td><a href="#" data-th-href="@{/strategy/delete(id=${strategyDTO.id},phase=cancel)}">
+            	<button type="button" data-th-text="#{cancel.button.label}">Cancel</button></a>
+            </td>
+		</tr>
+	</table>
+
+</body>
+</html>
+			

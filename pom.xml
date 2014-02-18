@@ -23,7 +23,7 @@
 		
 		<thymeleaf.version>2.1.2.RELEASE</thymeleaf.version>
 		
-		<hibernate.version>4.2.0.Final</hibernate.version>
+		<hibernate.version>4.3.1.Final</hibernate.version>
 		<mysql.connector.version>5.1.21</mysql.connector.version>
 		<commons.dbcp.version>1.4</commons.dbcp.version>
 		
@@ -68,6 +68,11 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
 		<dependency>

@@ -2,75 +2,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 	
-<head th:fragment="header">
+<head data-th-fragment="header">
     <meta charset="utf-8" />
-	<link type="text/css" rel="stylesheet" href="/resources/css/style.css" th:href="@{/resources/css/style.css}"/>
-	<title th:text="#{strategy.list.page.title}">Title</title>
+	<link type="text/css" rel="stylesheet" href="../../resources/css/style.css" data-th-href="@{/resources/css/style.css}"/>
+	<title data-th-text="#{strategy.list.page.title}">Title</title>
 </head>
+
 <body>
 <div>
 	<table class="box-table-a">
-		<caption>Site Users</caption>
+		<caption data-th-text="#{strategy.list.table.title}">Temp table title</caption>
 		<thead>
 			<tr>
-				<th scope="col">Id</th>
-				<th scope="col">Strategy Type</th>
-				<th scope="col">Strategy Name</th>
-				<th scope="col">Actions</th>
+				<th scope="col" data-th-text="#{strategy.list.id.label}">Temp ID</th>
+				<th scope="col" data-th-text="#{strategy.list.type.label}">Temp Type</th>
+				<th scope="col" data-th-text="#{strategy.list.name.label}">Temp Name</th>
+				<th scope="col" data-th-text="#{strategy.list.actions.label}">Temp Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Iron Condor</td>
-				<td>High Prob Hedged</td>
-				<td><a href="#">del</a> | <a href="#">edit</a></td>
+			<tr data-th-each="strategy : ${strategies}">
+				<td data-th-text="${strategy.id}">1</td>
+				<td data-th-text="${strategy.type}">Calendar</td>
+				<td data-th-text="${strategy.name}">Hot Pepper</td>
+				<td><a href="#" data-th-href="@{/strategy/delete(id=${strategy.id},phase=stage)}">delete</a> | 
+					<a href="#" data-th-href="@{/strategy/edit(id=${strategy.id})}">edit</a>
+				</td>
 			</tr>
-							
-			<tr>
+			<tr data-th-remove="all">
 				<td>2</td>
 				<td>Iron Condor</td>
-				<td>Low Prob</td>
-				<td><a href="#">del</a> | <a href="#">edit</a></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Butterfly</td>
-				<td>M3</td>
-				<td><a href="#">del</a> | <a href="#">edit</a></td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>Butterfly</td>
-				<td>Bearish</td>
-				<td><a href="#">del</a> | <a href="#">edit</a></td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>Iron Condor</td>
-				<td>Portillos</td>
-				<td><a href="#">del</a> | <a href="#">edit</a></td>
+				<td>High Prob Hedged</td>
+				<td><a href="#">delete</a> | <a href="#">edit</a></td>
 			</tr>
 		</tbody>
 	</table>
- 
-	<form action="#" method="post">
+	
+	<form action="#" data-th-action="@{/strategy/add}" data-th-object="${strategyDTO}" method="post">
 	<table class="box-table-a">
-		<caption>New Strategy</caption>
+		<caption data-th-text="#{strategy.list.add.title}">Add Title</caption>
 		<thead>
 			<tr>
-				<th>Strategy Type</th>
-				<th>Strategy Name</th>
+				<th data-th-text="#{strategy.list.type.label}">Type Label</th>
+				<th data-th-text="#{strategy.list.name.label}">Name Label</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td><input type="text" hidden="hidden"/>
-					<input type="text"/></td>
-				<td><input type="text"/></td>
+				<td><input type="text" hidden="hidden" data-th-field="*{id}"/>
+				    <input type="text" data-th-field="*{type}"/></td>
+				<td><input type="text" data-th-field="*{name}"/></td>
 			</tr>
 			<tr>
-				<td><button type="submit">Action</button></td>
+				<td>
+					<button type="submit" data-th-text="#{add.button.label}">Action</button>
+				</td>
 				<td></td>
 			</tr>
 		</tbody>
