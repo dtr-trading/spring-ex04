@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-	
 <head data-th-fragment="header">
     <meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="../../resources/css/style.css" th:href="@{/resources/css/style.css}"/>
 	<title data-th-text="#{strategy.edit.page.title}">temp title</title>
 </head>
-
 <body>
-
 <h1 data-th-text="#{strategy.edit.head.title}">temp heading</h1>
 
 	<form action="#" data-th-action="@{/strategy/edit}" data-th-object="${strategyDTO}" method="post">
@@ -36,7 +33,6 @@
 		</tbody>
 	</table>
 	</form>
-
 </body>
 </html>
 			

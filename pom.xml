@@ -13,20 +13,20 @@
 		<servlet-version>3.0.1</servlet-version>
 		<jsp-version>2.2.1</jsp-version>
 		<jstl-version>1.2</jstl-version>
-		
+
 		<spring-version>4.0.0.RELEASE</spring-version>
 		<spring-security-version>3.2.0.RELEASE</spring-security-version>
-		
+
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<log4j-version>1.2.17</log4j-version>
-		
+
 		<thymeleaf.version>2.1.2.RELEASE</thymeleaf.version>
-		
+
 		<hibernate.version>4.3.1.Final</hibernate.version>
 		<mysql.connector.version>5.1.21</mysql.connector.version>
 		<commons.dbcp.version>1.4</commons.dbcp.version>
-		
+
 	</properties>
 
 	<dependencies>

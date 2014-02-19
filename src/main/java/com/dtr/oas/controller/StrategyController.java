@@ -51,10 +51,7 @@ public class StrategyController {
 		logger.info("Strategy/edit-GET:  ID to query = " + id);
 		Strategy strategy = strategyService.getStrategy(id);
 		logger.info("Strategy/edit-GET:  " + strategy.getString());
-		StrategyDTO strategyDTO = new StrategyDTO();
-		strategyDTO.setId(strategy.getId());
-		strategyDTO.setName(strategy.getName());
-		strategyDTO.setType(strategy.getType());
+		StrategyDTO strategyDTO = StrategyMapper.getDTO(strategy);
 		logger.info("Strategy/edit-GET:  " + strategyDTO.getString());
 		modelAndView.addObject("strategyDTO",strategyDTO);
 		return modelAndView;
@@ -93,14 +90,9 @@ public class StrategyController {
 
 		if (phase.equals("stage")) {
 			modelAndView = new ModelAndView("strategy-delete");
-			
-			StrategyDTO strategyDTO = new StrategyDTO();
-			strategyDTO.setId(strategy.getId());
-			strategyDTO.setName(strategy.getName());
-			strategyDTO.setType(strategy.getType());
-			modelAndView.addObject("strategyDTO",strategyDTO);
-
+			StrategyDTO strategyDTO = StrategyMapper.getDTO(strategy);
 			String message = "Strategy " + strategy.getId() + " queued for display.";
+			modelAndView.addObject("strategyDTO",strategyDTO);
 			modelAndView.addObject("message", message);
 		}
 		
